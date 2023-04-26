@@ -2,12 +2,12 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import Loader from '../components/Loader';
 import Error from '../components/Error'; 
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 
 function LoginScreen() {
   const [email, setemail] = useState('')
- // const [user, setuser] = useState('')
+  // const [user, setuser] = useState('')
   const [password, setpassword] = useState('')
   const [loading, setloading] = useState(false);
   const [error,seterror] = useState()

@@ -11,10 +11,15 @@ const BookingScreen = () => {
   const [loading, setloading] = useState(true);
   const [error, seterror] = useState();
   const [room, setroom] = useState();
+  const [bookingdate, setbookingdate] = useState('');
 
   let { roomsid, fromdate, todate } = useParams();
   const fd = Moment(fromdate, 'DD-MM-YYYY')
   const td = Moment(todate, 'DD-MM-YYYY')
+
+  const date = new Date().getDate(); 
+  const month = new Date().getMonth() + 1; 
+  const year = new Date().getFullYear();
 
   const totaldays = Moment.duration(td.diff(fd)).asDays() + 1
   const [totalamount, settotalamount] = useState();
@@ -31,6 +36,7 @@ const BookingScreen = () => {
         const data = (await axios.post('http://localhost:5000/api/rooms/getallroomsbyid', { roomsid: roomsid })).data
         setroom(data.room);
         settotalamount(data.room.rentperday * totaldays)
+        setbookingdate(date+'-'+month+'-'+ year );
         //console.log(data.room);
         setloading(false)
 
@@ -53,6 +59,7 @@ const BookingScreen = () => {
     const bookingDetails = {
       room,
       userid: JSON.parse(localStorage.getItem('currentUser'))._id,
+      bookingdate,
       fromdate,
       todate,
       totalamount,

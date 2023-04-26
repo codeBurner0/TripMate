@@ -34,6 +34,8 @@ function RegisterScreen() {
         setpassword('')
         setcpassword('')
 
+        window.location.href = '/login'
+
       }
       catch (e) {
 
@@ -57,7 +59,7 @@ function RegisterScreen() {
         <div className="row justify-content-center ">
           <div className="col-md-5">
             {success && (<Success message='Registration success' />)}
-            <div className='bs mt-5' >
+            <div className='bs mt-5'>
               <p className='cee'>Register</p>
               <input type="text" className="form-control" placeholder="name" value={name} onChange={(e) => { setname(e.target.value) }} />
               <input type="text" className="form-control" placeholder="email" value={email} onChange={(e) => { setemail(e.target.value) }} />

@@ -72,7 +72,7 @@ export function MyBookings(){
           const result = await (await axios.post('http://localhost:5000/api/booking/cancelbooking' , {bookingid , roomid})).data
           console.log(result);
           setloading(false )
-          Swal.fire('Congrats' , 'Your booking has been cancelled' , 'success').then(result=>{
+          Swal.fire('OK' , 'Your booking has been cancelled' , 'success').then(result=>{
             window.location.reload();
           })
         }
