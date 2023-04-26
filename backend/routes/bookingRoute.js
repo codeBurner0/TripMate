@@ -13,7 +13,7 @@ const stripe = new Stripe('sk_test_51MxSFxSDImWCEH67YT4K9A0fUxM5TBBmix99aNxOi1JP
 
 
 router.post("/bookroom", async (req, res) => {
-  const { room, userid, fromdate, todate, totalamount, totaldays, token} = req.body
+  const { room, userid, bookingdate ,fromdate, todate, totalamount, totaldays, token} = req.body
    
   try{
     console.log('1st')
@@ -38,6 +38,7 @@ router.post("/bookroom", async (req, res) => {
           room: room.name,
           roomid: room._id,
           userid : userid,
+          bookingdate: bookingdate,
           fromdate : fromdate,
           todate : todate,
           totalamount : totalamount,
@@ -49,7 +50,7 @@ router.post("/bookroom", async (req, res) => {
     
         const roomtemp = await Room.findOne({ _id: room._id });
     
-        roomtemp.currentbookings.push({ bookingid: booking._id, fromdate: fromdate , todate:todate, userid: userid  , Payamount : totalamount,  details :token , status : booking.status});
+        roomtemp.currentbookings.push({ bookingid: booking._id, bookingdate: bookingdate, fromdate: fromdate , todate:todate, userid: userid  , Payamount : totalamount,  details :token , status : booking.status});
         console.log(roomtemp)
         await roomtemp.save();
         //res.send("Room booked ")

@@ -10,6 +10,9 @@ const bookingSchema = mongoose.Schema({
     userid :{
         type: String , required: true
     },
+    bookingdate:{
+        type: String , required: true
+    },
     fromdate :{
         type: String , required: true
     },
