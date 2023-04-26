@@ -46,20 +46,18 @@ function LoginScreen() {
     <div className='landing2' >
 
       <div className="row justify-content-center ">
-       <div className="col-md-5">
-       {loading && (<Loader/>)}
+        <div className="col-md-5">
+        {loading && (<Loader/>)}
         {error && (<Error message={'Invalid Credentials'}/>)}
         <div className='bs mt-5'>
           <p className='cee'>Login</p>
-         
           <input type="text" className="form-control" placeholder="email" value={email} onChange={(e) => { setemail(e.target.value) }} />
           <input type="password" className="form-control" placeholder="password" value={password} onChange={(e) => { setpassword(e.target.value) }} />
-           <button className='btn btn-primary mt-3' onClick={login}> Login </button>
-           <br />
-           <br />
-           <Link to='/register' className='underbutton'>SignUp</Link>
+          <button className='btn btn-primary mt-3' onClick={login}> Login </button>
+          <br />
+          <br />
+          <Link to='/register' className='underbutton'>SignUp</Link>
         </div>
-        
         </div>
       </div>
     </div>

@@ -7,7 +7,6 @@ function LandingScreen() {
     <div className='background'></div>
     <div className='row text-container'>
       <div className='col-md-12 text-center hello'>
-
       <h2 style={{color:'beige' , fontSize:'80px',fontWeight:'bold',color:"white"}}><b>TripMate</b></h2>
       <header className='header'>
       <div class="waviy">
