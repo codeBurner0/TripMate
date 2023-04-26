@@ -1,21 +1,19 @@
 import React from 'react'
-import hotellogo from '../images/Hotel.png'
+import hotellogo from '../images/hotelogo.png'
 
 
 function NavBar() {
     const user = JSON.parse(localStorage.getItem('currentUser'));
-    //console.log(currentUser)
-
     function logout() {
         localStorage.removeItem('currentUser')
         window.location.reload();
         window.location.href = '/login';
     }
     return (
-        <div>
+        <div >
             <nav class="navbar navbar-expand-lg " style={{margin:'0px'}}>
-                <img src={hotellogo} alt="" style={{height:'50px' , width:'50px' , marginRight:'5px'}}/>
-                <a class="navbar-brand" href="/home">The Hotel Hub</a>
+                <img src={hotellogo} alt="" style={{height:'50px' , width:'90px' , marginRight:'5px'}}/>
+                <a class="navbar-brand" href="/home">TripMate</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" ><i class="fa-solid fa-bars" style={{ color: "#ffffff" }}></i></span>
                 </button>
