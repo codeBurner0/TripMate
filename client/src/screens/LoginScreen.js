@@ -50,6 +50,7 @@ function LoginScreen() {
         {loading && (<Loader/>)}
         {error && (<Error message={'Invalid Credentials'}/>)}
         <div className='bs mt-5'>
+          
           <p className='cee'>Login</p>
           <input type="text" className="form-control" placeholder="email" value={email} onChange={(e) => { setemail(e.target.value) }} />
           <input type="password" className="form-control" placeholder="password" value={password} onChange={(e) => { setpassword(e.target.value) }} />
