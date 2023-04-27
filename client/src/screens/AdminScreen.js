@@ -7,27 +7,11 @@ import Swal from 'sweetalert2';
 function AdminScreen() {
 
   const useradmin = JSON.parse(localStorage.getItem('currentUser')).isAdmin;
-
   useEffect(()=>{
     if(!useradmin){
         window.location.href= "/home";
     }
 })
-
-//   useEffect(() => {
-//     console.log(JSON.parse(localStorage.getItem('currentUser')).isAdmin)
-//     if(JSON.parse(localStorage.getItem('currentUser')).isAdmin){
-//       console.log(JSON.parse(localStorage.getItem('currentUser')).isAdmin)
-//         window.location.href="/admin"
-//     }
-//     window.location.href="/home"
-//     // else if((JSON.parse(localStorage.getItem('currentUser')).isAdmin) === true){
-//     //   window.location.href="/admin"
-//     // }
-
-// });
- 
-
   return (
     <div className='landing2' style={{height:'582px'}}>
         <div className=' ml-3  mr-3 bs1'>
