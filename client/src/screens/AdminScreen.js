@@ -30,10 +30,10 @@ function AdminScreen() {
 
   return (
     <div className='landing2' style={{height:'582px'}}>
-        <div className=' ml-3  mr-3 bs' style={{marginTop:'5px'}}>
+        <div className=' ml-3  mr-3 bs1'>
         <h2 className='text-center' style={{fontSize:'30px' }}><b> Admin Panel </b></h2>
-       <Tabs defaultActiveKey='1'>
-            <Tabs.TabPane tab="Booking" key="1">
+       <Tabs defaultActiveKey='1' style={{color:"white"}}>
+            <Tabs.TabPane tab="Booking" key="1" >
              <Bookings/>
              </Tabs.TabPane>
             <Tabs.TabPane tab="Rooms" key="2">

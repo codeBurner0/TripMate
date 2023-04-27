@@ -2,11 +2,10 @@ import React , {useEffect , useState} from 'react'
 import { Tabs } from 'antd';
 import axios from 'axios';
 import Loader from "../components/Loader";
-import { Divider, Space, Tag } from 'antd';
-import Error from "../components/Error";
+import {  Tag } from 'antd';
 import Swal from 'sweetalert2';
 
-// const { TabPane } = Tabs;
+const { TabPane } = Tabs;
 
 function ProfileScreen() {
 
@@ -18,18 +17,18 @@ function ProfileScreen() {
         }
     })
     return (
-        <div className="landing2" style={{margin:'0px'}}>
-           <Tabs defaultActiveKey='1' className='ml-3 mt-3'>
-            <Tabs.TabPane tab="Profile" key="1" className='bs '>
+        <div className="landing2">
+           <Tabs defaultActiveKey='1' className='ml-3'  style={{color:'white'}}>
+            <Tabs.TabPane tab="Profile" key="1" className='bs'  >
              <h1>My Profile</h1>
 
              <br />
              <h1>Name : {user.name}</h1>
              <h1>Email : {user.email}</h1>
             </Tabs.TabPane>
-            <Tabs.TabPane tab="Bookings" key="2" >
+            <TabPane tab="Bookings" key="2" >
              <MyBookings />
-            </Tabs.TabPane>
+            </TabPane>
            </Tabs>
         </div>
     )

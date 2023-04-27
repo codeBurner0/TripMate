@@ -46,6 +46,13 @@ h1{
   background-color: rgba(162, 167, 154, 0.791);
   
 }
+.bs1{
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  background-color: rgba(162, 167, 154, 0.791);
+  
+}
 
 .bigimg{
   height: 400px;
@@ -169,7 +176,7 @@ input {
 
 .landing2{
 
-  background-image: url('images/log.jpg');
+  background-image: url('images/logi.jpg');
   background-size:cover;
   background-repeat: no-repeat;
   height: 610px;

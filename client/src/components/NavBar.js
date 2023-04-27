@@ -21,7 +21,7 @@ function NavBar() {
                     <ul className="navbar-nav" id="text">
                         {user ? (<>
                             <div class="dropdown">
-                                <button style={{ backgroundColor: 'rgb(59, 52, 52)' }} class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button style={{ backgroundColor: '#2c5245' }} class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class=" fa fa-user" style={{ margin: '3px', padding: '3px' }}></i>
                                     {user.name}
                                 </button>
