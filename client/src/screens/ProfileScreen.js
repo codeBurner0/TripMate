@@ -83,7 +83,7 @@ export function MyBookings(){
       }
 
     return (
-        <div className='landing1'>
+        <div className='landing2'>
             <div className='row'>
              <div className='col-md-6'>
               {loading && (<Loader/>)}
