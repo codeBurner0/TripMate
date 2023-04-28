@@ -43,7 +43,7 @@ h1{
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
-  background-color: rgba(170, 184, 148, 0.791);
+  background-color: rgba(162,167,154);
   
 }
 .bs1{
@@ -162,7 +162,6 @@ input {
 }
 
 .landing1{
-
   /* background-image: url('images/design.png');
     -webkit-backdrop-size:cover;
     background-size:cover;
@@ -181,8 +180,6 @@ input {
   background-repeat: no-repeat;
   height: 610px;
   /* -webkit-backdrop-size:cover;
-  
-  
   background-position:center center; */
   /* height: 100%; */
   width: 100%;
