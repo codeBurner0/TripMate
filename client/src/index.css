@@ -162,14 +162,6 @@ input {
 }
 
 .landing1{
-  /* background-image: url('images/design.png');
-    -webkit-backdrop-size:cover;
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position:center center;
-    height: 100%;
-  /* background: url('images/design.png') ;
-  background-size: 1500px 100% ; */
   background-color: rgb(190, 192, 186);
 }
 
@@ -179,9 +171,6 @@ input {
   background-size:cover;
   background-repeat: no-repeat;
   height: 610px;
-  /* -webkit-backdrop-size:cover;
-  background-position:center center; */
-  /* height: 100%; */
   width: 100%;
 
 }
