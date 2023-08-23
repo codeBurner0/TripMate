@@ -129,10 +129,12 @@ input {
   margin-top: 100px;
 }
 .header {
-  text-align: center;
-  font-size: 5px;
-  display: flex;
-  padding-left: 400px;
+  position: absolute;
+    font-size: 5px;
+    left: 50%;
+    transform: translate(-57%);
+    width: 100vw;
+    top: 235px;
 }
 .waviy {
   position: relative;
