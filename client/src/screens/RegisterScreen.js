@@ -24,7 +24,7 @@ function RegisterScreen() {
       }
       try {
         setloading(true)
-        const result = (await axios.post('http://localhost:5000/api/users/register', user)).data;
+        const result = (await axios.post('https://caregrid-hospital.vercel.app/api/users/register', user)).data;
         console.log(result)
         setloading(false)
         setsuccess(true)
