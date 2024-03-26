@@ -22,7 +22,7 @@ function LoginScreen() {
       try{
         
         setloading(true)
-        const result = (await axios.post('http://localhost:5000/api/users/login', user )).data;
+        const result = (await axios.post('https://caregrid-hospital.vercel.app/api/users/login', user )).data;
        // email= result.
         setemail(result.email);
       //  setuser(result.user);
