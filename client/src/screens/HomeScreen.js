@@ -25,7 +25,7 @@ const HomeScreen = () => {
     const fetchData = async () => {
       try {
         setloading(true)
-        const data = (await axios.get('http://localhost:5000/api/rooms/getallrooms')).data
+        const data = (await axios.get('https://caregrid-hospital.vercel.app/api/rooms/getallrooms')).data
 
         setData(data.rooms)
         setduplicaterooms(data.rooms)
