@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { getallrooms} from "../controller/roomController";
-import { getallroomsbyid} from "../controller/bookController";
-import  Rooms from "../models/room";
+import { getallrooms} from "../controller/roomController.js";
+import { getallroomsbyid} from "../controller/bookController.js";
+import  Rooms from "../models/room.js";
 
 
 // const express = require('express')
@@ -17,9 +17,7 @@ router.post("/addroom" , async(req,res) =>{
     try {
         const newroom = new Rooms(req.body)
         await newroom.save()
-
         res.send("New Room Added Successfully")
-
     } catch (error) {
         return res.status(500).json({error})
     }

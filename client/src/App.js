@@ -21,7 +21,7 @@ function App() {
               <Route  path ="/login" exact element= {<LoginScreen/>} />
               <Route  path ="/profile" element={<ProfileScreen />}/>
               <Route path="/admin" element={<AdminScreen/>}></Route>
-              <Route path="/" element={<LandingScreen/>}></Route>
+              <Route path="/" element={<HomeScreen/>}></Route>
           </Routes>
       </BrowserRouter>
     </div>
