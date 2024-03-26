@@ -50,7 +50,7 @@ export function Bookings(){
         const fetchData = async () => {
           try {
             setloading(true)
-            const rooms = await (await axios.post('http://localhost:5000/api/booking/getallbookings')).data;
+            const rooms = await (await axios.post('https://caregrid-hospital.vercel.app/api/booking/getallbookings')).data;
             //const rooms = (await axios.post("http://localhost:5000/api/booking/getbookingsbyuserid" , {userid : user._id})).data;
             console.log(rooms);
             setbookings(rooms);
@@ -119,7 +119,7 @@ export function Bookings(){
         const fetchData = async () => {
           try {
             setloading(true)
-            const data = (await axios.get('http://localhost:5000/api/rooms/getallrooms')).data
+            const data = (await axios.get('https://caregrid-hospital.vercel.app/api/rooms/getallrooms')).data
            // const rooms = await (await axios.post('http://localhost:5000/api/rooms/getallrooms')).data;
             //const rooms = (await axios.post("http://localhost:5000/api/booking/getbookingsbyuserid" , {userid : user._id})).data;
             console.log(rooms);
@@ -186,7 +186,7 @@ export function Bookings(){
         const fetchData = async () => {
           try {
             setloading(true)
-            const data = (await axios.get('http://localhost:5000/api/users/getallusers')).data
+            const data = (await axios.get('https://caregrid-hospital.vercel.app/api/users/getallusers')).data
             console.log(data);
             setusers(data);
             setloading(false)
@@ -261,7 +261,7 @@ export function Bookings(){
     try {
       
       setloading(true)
-      const result = await(await axios.post('http://localhost:5000/api/rooms/addroom' , newroom)).data
+      const result = await(await axios.post('https://caregrid-hospital.vercel.app/api/rooms/addroom' , newroom)).data
       console.log(result)
       setloading(false)
       Swal.fire('Congrats' , 'New Room Has successfully added' , 'success').then(result=>{
