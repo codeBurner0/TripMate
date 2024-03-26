@@ -1,5 +1,4 @@
-import { compareSync, hashSync } from "bcryptjs";
-import  Rooms from "../models/room";
+import  Rooms from "../models/room.js";
 
 export const getallroomsbyid = async (req, res) => {
   const roomsid = req.body.roomsid;
@@ -11,7 +10,7 @@ export const getallroomsbyid = async (req, res) => {
   } catch (err) {
     return console.log(err);
   }
-
+  
   if (!room) {
     return res.status(500).json({ message: "Unexpected Error Occured" });
   }

@@ -1,7 +1,6 @@
 *{
   margin:0px ;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 body {
   margin: 0;
@@ -30,28 +29,20 @@ h1{
   font-size:20px !important
 }
 .btn{
-  background-color: #2c5245;
+  background-color: #2a8478;
   color: white;
-  border-color: black;
+  border-color: #2a8478;
   box-shadow: none;
   font-size: small;
   margin-left: 10px;
   margin-right: 5px;
 }
 .bs{
-  margin: 30px;
+  /* margin: 5px; */
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
-  background-color: rgba(162,167,154);
-  
-}
-.bs1{
-  padding: 30px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 5px;
-  background-color: rgba(162, 167, 154, 0.791);
-  
+  background-color: #1c877a6c;
 }
 
 .bigimg{
@@ -77,7 +68,6 @@ input {
 .form-control{
   height: 31px;
   margin-top: 10px;
-  border: 2px solid #2c5245;
 }
 .cee{
   text-align: center;
@@ -86,25 +76,25 @@ input {
 }
 
 .navbar{
-  background-color: #2c5245 ;
+  background-color: #2a8478; ;
   height: 80px;
   /* padding: 20px; */
   
 }
 .nav-link:hover{
-  color: rgb(204, 244, 244);
+  color:#25bfab;
+  font-weight: bolder;
 }
 .navbar-brand:hover{
-  color: rgb(162, 167, 154);
+  color: #074b42;
+  font-weight: bolder;
 }
 .nav-link{
-  color: aliceblue;
+  color: rgb(102, 51, 0);
   /* background-color: blue; */
 }
 .navbar-brand{
-  color:white;
-  font-family: 'Poppins', sans-serif;
-  font-size: 21px;
+  color:black;
 }
 .navbar-nav{
   margin-left: auto;
@@ -113,71 +103,43 @@ input {
 .nav-item{
   padding: 10px;
 }
-.background {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: url('./images/hotel.jpg') no-repeat;
-  background-size: cover;
-  background-position: center;
-  filter: blur(2px);
-  z-index: -1;
-}
 
-.text-container {
-  text-align: center;
-  margin-top: 100px;
+.landing{
+  background: url('images/hotelogo.png') no-repeat;
+  background-size: 1500px 1000px;
+  overflow: hidden;
+  height: 591px;
+  padding-top: 120px;
+  width: 210.3vh ;
 }
-.header {
-  position: absolute;
-    font-size: 5px;
-    left: 50%;
-    transform: translate(-57%);
-    width: 100vw;
-    top: 235px;
-}
-.waviy {
-  position: relative;
-  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
-  font-size: 20px;
-  font-weight: bold;
-  padding-left: 70px;
-}
-.waviy span {
-  font-family: 'Alfa Slab One', cursive;
-  position: relative;
-  backdrop-filter: blur(5px);
-  display: inline-block;
-  color: rgb(150, 150, 150);
-  text-transform: uppercase;
-  animation: waviy 1s 5s;
-  animation-delay: calc(.1s * var(--i));
-  
-}
-@keyframes waviy {
-  0%,40%,100% {
-    transform: translateY(0)
-  }
-  20% {
-    transform: translateY(-20px)
-  }
-}
-
 .landing1{
-  background-color: rgb(190, 192, 186);
+
+  background-image: url('https://img.freepik.com/free-vector/soft-green-watercolor-texture-elegant-background_1055-8764.jpg?size=626&ext=jpg&ga=GA1.1.1780900229.1708019137&semt=ais');
+    -webkit-backdrop-size:cover;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center center;
+    height: 100%;
+  /* background: url('images/design.png') ;
+  background-size: 1500px 100% ; */
 }
 
 .landing2{
 
-  background-image: url('images/logi.jpg');
+  background-image: url('https://img.freepik.com/free-vector/soft-green-watercolor-texture-elegant-background_1055-8764.jpg?size=626&ext=jpg&ga=GA1.1.1780900229.1708019137&semt=ais');
   background-size:cover;
   background-repeat: no-repeat;
-  height: 610px;
+  height: 573px;
+  /* -webkit-backdrop-size:cover;
+  
+  
+  background-position:center center; */
+  /* height: 100%; */
   width: 100%;
 
 }
 .landingbtn{
-  background-color: #2c5245 ;
+  background-color: black;
   color: white;
   margin-top: 20px;
 }
@@ -185,5 +147,4 @@ input {
 .underbutton{
   margin: 5px;
   margin-left: 10px;
-  color: white;
 }

@@ -1,5 +1,6 @@
-import { compareSync, hashSync } from "bcryptjs";
-import  Rooms from "../models/room";
+import pkg from 'bcryptjs';
+const { compareSync, hashSync } = pkg;
+import  Rooms from "../models/room.js";
 // const rooms = require( "../models/room")
 
 export const getallrooms = async (req, res) => {
