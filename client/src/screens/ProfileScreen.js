@@ -50,7 +50,7 @@ export function MyBookings(){
         const fetchData = async () => {
           try {
             setloading(true)
-            const rooms = await (await axios.post('http://localhost:5000/api/booking/getbookingsbyuserid', {userid : user._id})).data;
+            const rooms = await (await axios.post('https://caregrid-hospital.vercel.app/api/booking/getbookingsbyuserid', {userid : user._id})).data;
             //const rooms = (await axios.post("http://localhost:5000/api/booking/getbookingsbyuserid" , {userid : user._id})).data;
             console.log(rooms);
             setbookings(rooms);
