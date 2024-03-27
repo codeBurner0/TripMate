@@ -12,7 +12,7 @@ function Room({rooms , fromdate ,todate}) {
 
   return (
     <div className='row bs'>
-      <div className='col-md-5 style={{height: '200px' , width:'100%'}}'>
+      <div className='col-md-5' style={{height: '200px' , width:'100%'}}>
            <img style={{height: '100%' , width:'100%'}} src={rooms.imageurls[0]}  className='smallimg'/>
       </div>
       <div className='col-md-7'>
