@@ -8,13 +8,20 @@ import Swal from "sweetalert2";
 const { TabPane } = Tabs;
 
 function ProfileScreen() {
-  const user = JSON.parse(localStorage.getItem("currentUser"));
-
+  // const user = JSON.parse(localStorage.getItem("currentUser"));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("myData")));
   useEffect(() => {
-    if (!user) {
-      window.location.href = "/login";
-    }
-  });
+    setUser(JSON.parse(localStorage.getItem("myData")));
+    console.log(localStorage.getItem("myData"));
+  }, []);
+
+  // useEffect(() => {
+  //   if (!user) {
+  //     window.location.href = "/login";
+  //   }
+  // });
+
+
   return (
     <div className="landing1">
       <Tabs defaultActiveKey="1" className="ml-3" style={{ color: "white" }}>
@@ -23,8 +30,9 @@ function ProfileScreen() {
             <h1>My Profile</h1>
 
             <br />
-            <h1>Name : {user.name}</h1>
+            <h1>Name : {user.firstName + " "} {user.lastName}</h1>
             <h1>Email : {user.email}</h1>
+            <h1>Phone : {user.phone}</h1>
           </div>
         </TabPane>
         <TabPane tab="Bookings" key="2">
@@ -38,7 +46,8 @@ function ProfileScreen() {
 export default ProfileScreen;
 
 export function MyBookings() {
-  const user = JSON.parse(localStorage.getItem("currentUser"));
+  // const user = JSON.parse(localStorage.getItem("currentUser"));
+  const user = JSON.parse(localStorage.getItem("myData"));
   const [bookings, setbookings] = useState([]);
   const [loading, setloading] = useState(false);
   const [error, seterror] = useState();
