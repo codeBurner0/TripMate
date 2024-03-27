@@ -25,7 +25,7 @@ const HomeScreen = () => {
     const fetchData = async () => {
       try {
         setloading(true)
-        const data = (await axios.get('https://caregrid-hospital.vercel.app/api/rooms/getallrooms')).data
+        const data = (await axios.get('http://localhost:5000/api/rooms/getallrooms')).data
 
         setData(data.rooms)
         setduplicaterooms(data.rooms)
@@ -136,7 +136,7 @@ const HomeScreen = () => {
 
       <div className='row justify-content-center mt-3'>
         {loading ? (<Loader />) : (rooms.map((rooms) => {
-          return <div className='col-md-9 mt-2'>
+          return <div className='col-md-3 mt-4 ml-5'>
             <Room rooms={rooms} fromdate={fromdate} todate={todate} />
           </div>
         })
