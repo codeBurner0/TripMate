@@ -12,17 +12,17 @@ import LandingScreen from './screens/LandingScreen';
 
 function App() {
 
-  const [user, setUser] = useState([]);
-  useEffect(() => {
-    // Read the data passed from the first app
-    const params = new URLSearchParams(window.location.search);
-    const dataFromFirstApp = params.get("data");
-    if ( localStorage.getItem("myData")==="null") {
-      // Set the data into localStorage of the second app
-      localStorage.setItem("myData", dataFromFirstApp);
-    }
-    setUser(JSON.parse(localStorage.getItem("myData")));
-  }, []);
+  // const [user, setUser] = useState([]);
+  // useEffect(() => {
+  //   // Read the data passed from the first app
+  //   const params = new URLSearchParams(window.location.search);
+  //   const dataFromFirstApp = params.get("data");
+  //   if ( localStorage.getItem("myData")==="null") {
+  //     // Set the data into localStorage of the second app
+  //     localStorage.setItem("myData", dataFromFirstApp);
+  //   }
+  //   setUser(JSON.parse(localStorage.getItem("myData")));
+  // }, []);
 
   return (
     <div className="App">
