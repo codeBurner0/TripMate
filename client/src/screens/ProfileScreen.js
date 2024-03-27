@@ -59,7 +59,7 @@ export function MyBookings() {
         setloading(true);
         const rooms = await (
           await axios.post(
-            "http://localhost:5000/api/booking/getbookingsbyuserid",
+            "https://caregrid-hospital.vercel.app/api/booking/getbookingsbyuserid",
             { userid: user._id }
           )
         ).data;
@@ -80,7 +80,7 @@ export function MyBookings() {
     try {
       setloading(true);
       const result = await (
-        await axios.post("http://localhost:5000/api/booking/cancelbooking", {
+        await axios.post("https://caregrid-hospital.vercel.app/api/booking/cancelbooking", {
           bookingid,
           roomid,
         })
