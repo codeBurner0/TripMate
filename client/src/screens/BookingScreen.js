@@ -9,6 +9,7 @@ import StripeCheckout from 'react-stripe-checkout';
 
 const BookingScreen = () => {
   const [loading, setloading] = useState(true);
+  const [data,setData]=useState()
   const [error, seterror] = useState();
   const [room, setroom] = useState();
   const [bookingdate, setbookingdate] = useState('');
@@ -25,11 +26,16 @@ const BookingScreen = () => {
   const [totalamount, settotalamount] = useState();
 
 
+  useEffect(()=>{
+    setData( JSON.parse(localStorage.getItem('myData')))
+  
+  },[])
+
   useEffect(() => {
 
-    if(!localStorage.getItem('currentUser')){
-      window.location.href = '/login'
-    }
+    // if(!localStorage.getItem('currentUser')){
+    //   window.location.href = '/login'
+    // }
     const fetchData = async () => {
       try {
         setloading(true)
@@ -58,8 +64,8 @@ const BookingScreen = () => {
     console.log(token)
     const bookingDetails = {
       room,
-      userid: JSON.parse(localStorage.getItem('currentUser'))._id,
-      username: JSON.parse(localStorage.getItem("currentUser")).name,
+      userid: data._id,
+      username: data.firstname,
       bookingdate,
       fromdate,
       todate,
@@ -104,7 +110,7 @@ const BookingScreen = () => {
               <h1><b>Booking Details</b></h1>
               <hr />
               <b>
-                <p>Name : {JSON.parse(localStorage.getItem('currentUser')).name} </p>
+                <p>Name : {data.firstname} </p>
                 <p>From Date : {fromdate}</p>
                 <p>To Date : {todate}</p>
                 <p>Max Count : {room.maxcount}</p>
