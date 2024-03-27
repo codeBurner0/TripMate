@@ -25,7 +25,6 @@ const BookingScreen = () => {
   const totaldays = Moment.duration(td.diff(fd)).asDays() + 1
   const [totalamount, settotalamount] = useState();
 
-
   useEffect(()=>{
     setData( JSON.parse(localStorage.getItem('myData')))
   
