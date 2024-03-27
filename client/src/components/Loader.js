@@ -7,7 +7,7 @@ function Loader() {
     
       
   return (
-    <div style={{marginTop:'20px',marginLeft:'50%',marginRight:'40%'}}>
+    <div style={{ppaddingTop:'20px',marginLeft:'50%',marginRight:'40%'}}>
      <div >
       <HashLoader
         color='#000'
