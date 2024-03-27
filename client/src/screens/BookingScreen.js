@@ -33,7 +33,7 @@ const BookingScreen = () => {
     const fetchData = async () => {
       try {
         setloading(true)
-        const data = (await axios.post('https://caregrid-hospital.vercel.app/api/rooms/getallroomsbyid', { roomsid: roomsid })).data
+        const data = (await axios.post('http://localhost:5000/api/rooms/getallroomsbyid', { roomsid: roomsid })).data
         setroom(data.room);
         settotalamount(data.room.rentperday * totaldays)
         setbookingdate(date+'-'+month+'-'+ year );
@@ -59,6 +59,7 @@ const BookingScreen = () => {
     const bookingDetails = {
       room,
       userid: JSON.parse(localStorage.getItem('currentUser'))._id,
+      username: JSON.parse(localStorage.getItem("currentUser")).name,
       bookingdate,
       fromdate,
       todate,
@@ -70,7 +71,7 @@ const BookingScreen = () => {
     try {
 
       setloading(true);
-      const result = await axios.post('https://caregrid-hospital.vercel.app/api/booking/bookroom', bookingDetails);
+      const result = await axios.post('http://localhost:5000/api/booking/bookroom', bookingDetails);
       setloading(false);
       Swal.fire('Congratulations' , 'Your room booked successfully' , 'success').then(result=>{
         if(result.value){
@@ -90,9 +91,9 @@ const BookingScreen = () => {
   return (
         <div className="landing2">
       {loading ? (<Loader />) : room ? (<div>
-        <div className="row justify-content-center bs1" >
-          <div className="col-md-6" >
-            <h1>{room.name}</h1>
+        <div className="row justify-content-center  p-4" >
+          <div className="col-md-5 " >
+            <h1><b>{room.name}</b></h1>
             <img src={room.imageurls[0]} className="bigimg" />
           </div>
 
@@ -100,7 +101,7 @@ const BookingScreen = () => {
 
             <div style={{ textAlign: 'right' }}>
 
-              <h1>Booking Details</h1>
+              <h1><b>Booking Details</b></h1>
               <hr />
               <b>
                 <p>Name : {JSON.parse(localStorage.getItem('currentUser')).name} </p>
@@ -112,7 +113,7 @@ const BookingScreen = () => {
 
             <div style={{ textAlign: 'right' }}>
               <b>
-                <h1>Amount</h1>
+                <h1><b>Amount</b></h1>
                 <hr />
                 <p>Total Days : {totaldays} </p>
                 <p>Rent per day : {room.rentperday}</p>
