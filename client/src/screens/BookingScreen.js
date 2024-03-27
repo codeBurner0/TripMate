@@ -64,7 +64,7 @@ const BookingScreen = () => {
     const bookingDetails = {
       room,
       userid: data._id,
-      username: data.firstname,
+      // username: data.firstname,
       bookingdate,
       fromdate,
       todate,
