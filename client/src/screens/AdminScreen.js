@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 function AdminScreen() {
 
-  const useradmin = JSON.parse(localStorage.getItem('currentUser')).isAdmin;
+  const useradmin = JSON.parse(localStorage.getItem('myData')).isAdmin;
   useEffect(()=>{
     if(!useradmin){
         window.location.href= "/home";
