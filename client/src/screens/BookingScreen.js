@@ -13,6 +13,7 @@ const BookingScreen = () => {
   const [error, seterror] = useState();
   const [room, setroom] = useState();
   const [bookingdate, setbookingdate] = useState('');
+  const type = "hospital";
 
   let { roomsid, fromdate, todate } = useParams();
   const fd = Moment(fromdate, 'DD-MM-YYYY')
@@ -70,6 +71,7 @@ const BookingScreen = () => {
       todate,
       totalamount,
       totaldays,
+      type,
       token
     }
 
