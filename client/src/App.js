@@ -12,6 +12,7 @@ import LandingScreen from './screens/LandingScreen';
 
 function App() {
 
+localStorage.clear();
 const params = new URLSearchParams(window.location.search);
     const dataFromFirstApp = params.get("data");
     console.log(!localStorage.getItem("myData"))
