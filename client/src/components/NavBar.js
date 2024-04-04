@@ -61,10 +61,6 @@ function NavBar() {
                     {" "}
                     Profile{" "}
                   </Link>
-                  <Link class="dropdown-item" to="#" onClick={logout}>
-                    {" "}
-                    Log out
-                  </Link>
                 </div>
               </div>
             </>
