@@ -15,9 +15,9 @@ function App() {
     }
     const params = new URLSearchParams(window.location.search);
     const dataFromFirstApp = params.get("data");
-   if(JSON.parse(localStorage.getItem("myData"))?.email!==JSON.parse(dataFromFirstApp)?.email){
-      localStorage.clear()
-   }
+   // if(JSON.parse(localStorage.getItem("myData"))?.email!==JSON.parse(dataFromFirstApp)?.email){
+   //    localStorage.clear()
+   // }
    console.log("hiol")
     if (!localStorage.getItem("myData")) {
       console.log("internal");
