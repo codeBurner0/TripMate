@@ -8,7 +8,7 @@ function NavBar() {
     window.location.reload();
     window.location.href = "/login";
   }
-  const [name, setName] = useState({"id":"660430fe74d07d6ebaba919f","firstName":" ","lastName":" ","email":"ankit@gmail.com","phone":7078259655,"_v":0});
+  const [name, setName] = useState({"id":"660430fe74d07d6ebaba919f","firstName":"Ankit","lastName":" ","email":"ankit@gmail.com","phone":7078259655,"_v":0});
   useEffect(() => {
     setName(JSON.parse(localStorage.getItem("myData")));
     console.log(name)
