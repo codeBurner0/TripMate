@@ -16,7 +16,6 @@ import ProfileScreen from "./screens/ProfileScreen";
 import AdminScreen from "./screens/AdminScreen";
 import LandingScreen from "./screens/LandingScreen";
 
-
 function App() {
   const navigate=useNavigate()
   const [data, setData] = useState({
