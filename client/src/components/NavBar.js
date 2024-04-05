@@ -55,7 +55,7 @@ function NavBar() {
                     class=" fa fa-user"
                     style={{ margin: "3px", padding: "3px" }}
                   ></i>
-                  
+                 {name.firstName}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <Link class="dropdown-item" to="/profile">
