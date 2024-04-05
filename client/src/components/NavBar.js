@@ -2,18 +2,7 @@ import React from "react";
 import logo from "../images/clogo.png";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-function NavBar() {
-  function logout() {
-    localStorage.removeItem("data");
-    window.location.reload();
-    window.location.href = "/login";
-  }
-  const [name, setName] = useState({"id":"660430fe74d07d6ebaba919f","firstName":"Ankit","lastName":"Anand","email":"ankit@gmail.com","phone":7078259655,"_v":0});
-  console.log(name.firstName);
-  useEffect(() => {
-    setName(JSON.parse(localStorage.getItem("myData")));
-    console.log(name)
-  }, []);
+function NavBar({name}) {
   return (
     <div>
       <nav class="navbar navbar-expand-lg " style={{ margin: "0px" }}>
@@ -55,7 +44,7 @@ function NavBar() {
                     class=" fa fa-user"
                     style={{ margin: "3px", padding: "3px" }}
                   ></i>
-                 {name.firstName}
+                  {name}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <Link class="dropdown-item" to="/profile">
