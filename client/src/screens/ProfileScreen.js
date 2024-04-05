@@ -8,18 +8,7 @@ import Swal from "sweetalert2";
 const { TabPane } = Tabs;
 
 function ProfileScreen() {
-  // const user = JSON.parse(localStorage.getItem("currentUser"));
-  const [user, setUser] = useState({"id":"660430fe74d07d6ebaba919f","firstName":"Manvi","lastName":"Anand","email":"manvi@gmail.com","phone":7078259655,"_v":0});
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("myData")));
-    console.log(localStorage.getItem("myData"));
-  }, []);
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     window.location.href = "/login";
-  //   }
-  // });
 
 
   return (
@@ -30,9 +19,9 @@ function ProfileScreen() {
             <h1>My Profile</h1>
 
             <br />
-            <h1>Name : {user.firstName + " "} {user.lastName}</h1>
-            <h1>Email : {user.email}</h1>
-            <h1>Phone : {user.phone}</h1>
+            <h1>Name : {name}</h1>
+            <h1>Email : {email}</h1>
+            <h1>Phone : {phone}</h1>
           </div>
         </TabPane>
         <TabPane tab="Bookings" key="2">
