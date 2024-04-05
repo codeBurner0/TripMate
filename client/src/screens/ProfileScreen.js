@@ -9,7 +9,6 @@ const { TabPane } = Tabs;
 
 function ProfileScreen({name,phone,email}) {
 
-
   return (
     <div className="landing1">
       <Tabs defaultActiveKey="1" className="ml-3" style={{ color: "white" }}>
