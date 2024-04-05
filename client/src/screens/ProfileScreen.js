@@ -9,7 +9,7 @@ const { TabPane } = Tabs;
 
 function ProfileScreen() {
   // const user = JSON.parse(localStorage.getItem("currentUser"));
-  const [user, setUser] = useState({"id":"660430fe74d07d6ebaba919f","firstName":" ","lastName":"Anand","email":"manvi@gmail.com","phone":7078259655,"_v":0});
+  const [user, setUser] = useState({"id":"660430fe74d07d6ebaba919f","firstName":"Manvi","lastName":"Anand","email":"manvi@gmail.com","phone":7078259655,"_v":0});
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("myData")));
     console.log(localStorage.getItem("myData"));
