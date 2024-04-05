@@ -7,8 +7,7 @@ import Swal from "sweetalert2";
 
 const { TabPane } = Tabs;
 
-function ProfileScreen() {
-
+function ProfileScreen({name,phone,email}) {
 
 
   return (
