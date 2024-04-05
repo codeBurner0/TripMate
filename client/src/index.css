@@ -67,8 +67,28 @@ input {
   height: 50px;
   width: 540px;
   margin: 10px;
-  
 }
+
+.table{
+  background-color : #f2f7f2b8;
+}
+
+.table-bordered {
+  border : 2px solid black;
+}
+
+.table-bordered td , .table-bordered th {
+  border : 1px solid black;
+}
+
+.table thead th{
+  border-bottom : 2px solid black;
+}
+
+.table-light{
+  background-color : #B2BEE5;
+}
+
 .form-control{
   height: 31px;
   margin-top: 10px;
