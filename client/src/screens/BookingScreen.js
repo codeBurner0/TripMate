@@ -9,9 +9,11 @@ import StripeCheckout from 'react-stripe-checkout';
 
 const BookingScreen = () => {
   const [loading, setloading] = useState(true);
+  const [data,setData]=useState()
   const [error, seterror] = useState();
   const [room, setroom] = useState();
   const [bookingdate, setbookingdate] = useState('');
+  const type = "hospital";
 
   let { roomsid, fromdate, todate } = useParams();
   const fd = Moment(fromdate, 'DD-MM-YYYY')
@@ -24,16 +26,20 @@ const BookingScreen = () => {
   const totaldays = Moment.duration(td.diff(fd)).asDays() + 1
   const [totalamount, settotalamount] = useState();
 
+  useEffect(()=>{
+    setData( JSON.parse(localStorage.getItem('myData')))
+  
+  },[])
 
   useEffect(() => {
 
-    if(!localStorage.getItem('currentUser')){
-      window.location.href = '/login'
-    }
+    // if(!localStorage.getItem('currentUser')){
+    //   window.location.href = '/login'
+    // }
     const fetchData = async () => {
       try {
         setloading(true)
-        const data = (await axios.post('http://localhost:5000/api/rooms/getallroomsbyid', { roomsid: roomsid })).data
+        const data = (await axios.post('https://caregrid-hospital.vercel.app/api/rooms/getallroomsbyid', { roomsid: roomsid })).data
         setroom(data.room);
         settotalamount(data.room.rentperday * totaldays)
         setbookingdate(date+'-'+month+'-'+ year );
@@ -58,19 +64,21 @@ const BookingScreen = () => {
     console.log(token)
     const bookingDetails = {
       room,
-      userid: JSON.parse(localStorage.getItem('currentUser'))._id,
+      userid: data._id,
+      // username: data.firstname,
       bookingdate,
       fromdate,
       todate,
       totalamount,
       totaldays,
+      type,
       token
     }
 
     try {
 
       setloading(true);
-      const result = await axios.post('http://localhost:5000/api/booking/bookroom', bookingDetails);
+      const result = await axios.post('https://caregrid-hospital.vercel.app/api/booking/bookroom', bookingDetails);
       setloading(false);
       Swal.fire('Congratulations' , 'Your room booked successfully' , 'success').then(result=>{
         if(result.value){
@@ -90,9 +98,9 @@ const BookingScreen = () => {
   return (
         <div className="landing2">
       {loading ? (<Loader />) : room ? (<div>
-        <div className="row justify-content-center bs1" >
-          <div className="col-md-6" >
-            <h1>{room.name}</h1>
+        <div className="row justify-content-center  p-4" >
+          <div className="col-md-5 " >
+            <h1><b>{room.name}</b></h1>
             <img src={room.imageurls[0]} className="bigimg" />
           </div>
 
@@ -100,10 +108,10 @@ const BookingScreen = () => {
 
             <div style={{ textAlign: 'right' }}>
 
-              <h1>Booking Details</h1>
+              <h1><b>Booking Details</b></h1>
               <hr />
               <b>
-                <p>Name : {JSON.parse(localStorage.getItem('currentUser')).name} </p>
+                <p>Name : {data.firstname} </p>
                 <p>From Date : {fromdate}</p>
                 <p>To Date : {todate}</p>
                 <p>Max Count : {room.maxcount}</p>
@@ -112,7 +120,7 @@ const BookingScreen = () => {
 
             <div style={{ textAlign: 'right' }}>
               <b>
-                <h1>Amount</h1>
+                <h1><b>Amount</b></h1>
                 <hr />
                 <p>Total Days : {totaldays} </p>
                 <p>Rent per day : {room.rentperday}</p>
