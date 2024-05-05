@@ -17,7 +17,7 @@ import AdminScreen from "./screens/AdminScreen";
 import LandingScreen from "./screens/LandingScreen";
 function App() {
   const navigate=useNavigate()
-  const [data, setData] = useState({
+  const [data, setData] = useState((localStorage.getItem("myData"))?JSON.parse(localStorage.getItem("myData")):{
     _id: "660430fe74d07d6ebaba919f",
     firstName: " ",
     lastName: "Anand",
