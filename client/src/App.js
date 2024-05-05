@@ -25,19 +25,15 @@ function App() {
     phone: 7078259655,
     __v: 0,
   });
-  console.log(data.firstName)
 
-  useEffect(() => {
-    if (localStorage.getItem("myData") === "null") {
-      localStorage.clear();
-    }
+  useEffect( () => {
     const params = new URLSearchParams(window.location.search);
     const dataFromFirstApp = params.get("data");
-    if (!localStorage.getItem("myData")) {
-      console.log("internal");
-      localStorage.setItem("myData", dataFromFirstApp);
-      setData(JSON.parse(localStorage.getItem("myData")));
-      navigate("/home");
+    if (dataFromFirstApp) {
+      localStorage.clear();
+        localStorage.setItem("myData", dataFromFirstApp);
+        setData(JSON.parse(localStorage.getItem("myData")));
+        navigate("/home");
     }
   }, []);
 
