@@ -19,7 +19,7 @@ function App() {
   const navigate=useNavigate()
   const [data, setData] = useState({
     _id: "660430fe74d07d6ebaba919f",
-    firstName: "Ankit",
+    firstName: " ",
     lastName: "Anand",
     email: "ankit@gmail.com",
     phone: 7078259655,
